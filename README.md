@@ -17,7 +17,7 @@ series: {
 		show: boolean
 		font: string or font spec
 		labelFormatter: null or (fn: string, series object -> string)
-		position: "middle"
+		position: string
 	}
 }
 ```
