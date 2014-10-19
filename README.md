@@ -1,7 +1,7 @@
 flot.barlabels
 ==============
 
-This is a Flot plugin that adds value labels to bar charts.
+Flot plugin that adds value labels to bar charts.
 
 ## Installation ##
 [Download](https://raw.githubusercontent.com/cleroux/flot-barlabels/xxx/jquery.flot.barlabels.js) and place the following script tag after flot's script tags:
@@ -20,6 +20,7 @@ series: {
 		position: "middle"
 	}
 }
+'''
 
 ### show ###
 Specifies whether or not to show value labels.
