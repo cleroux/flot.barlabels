@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			#placeholder {
+				height:300px;
+				width:350px;
+			}
+		</style>
+		<script type="text/javascript" src="js/flot/jquery.js"></script>
+		<script type="text/javascript" src="js/flot/jquery.flot.js"></script>
+		<script type="text/javascript" src="js/flot/jquery.flot.barlabels.js"></script>
+		<script type="text/javascript">
+		
+			var data = [
+				{
+				  label: "Series 1",
+				  data: [[0,1],[1,2],[2,4],[3,3],[4,2],[5,4],[6,2],[7,1]]
+				}
+			];
+
+			var options = {
+				lines: {
+					show: false
+				},
+				bars: {
+					show: true,
+					align:"center",
+					barWidth: 0.9
+				},
+				grid: {
+					hoverable:true
+				}
+			};
+			
+			$(function() {
+			
+				$.plot("#placeholder", data, options);
+			});
+		</script>
+	</head>
+	<body>
+		<div id="page-title">Flot Bar Labels Plugin Basic Example</div>
+		<div id="placeholder"></div>
+	</body>
+</html>
