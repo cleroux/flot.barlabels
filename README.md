@@ -4,7 +4,7 @@ flot.barlabels
 Flot plugin that adds value labels to bar charts.
 
 ## Installation ##
-[Download](https://raw.githubusercontent.com/cleroux/flot-barlabels/xxx/jquery.flot.barlabels.js) and place the following script tag after flot's script tags:
+[Download](https://raw.githubusercontent.com/cleroux/flot.barlabels/master/jquery.flot.barlabels.js) and place the following script tag after flot's script tags:
 ```html
 <script type="text/javascript" src="[...]/jquery.flot.barlabels.js"></script>
 ```
