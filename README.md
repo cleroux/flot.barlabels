@@ -1,7 +1,7 @@
 flot.barlabels
 ==============
 
-Flot plugin that adds value labels to bar charts.
+[Flot](http://www.flotcharts.org) plugin that adds value labels to bar charts.
 
 ![alt tag](https://cloud.githubusercontent.com/assets/1497949/5023687/3445a664-6ab2-11e4-9402-32b3ffbbe467.png)
 
