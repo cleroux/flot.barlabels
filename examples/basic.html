@@ -4,7 +4,7 @@
 		<style type="text/css">
 			#placeholder {
 				height:300px;
-				width:350px;
+				width:400px;
 			}
 		</style>
 		<script type="text/javascript" src="js/flot/jquery.js"></script>
@@ -27,14 +27,10 @@
 					show: true,
 					align:"center",
 					barWidth: 0.9
-				},
-				grid: {
-					hoverable:true
 				}
 			};
 			
 			$(function() {
-			
 				$.plot("#placeholder", data, options);
 			});
 		</script>
