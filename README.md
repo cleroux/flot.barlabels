@@ -37,7 +37,7 @@ A function that allows custom formatting or manipulation of the value that will 
 Default: Function simply returns the value.
 ### position ###
 Specifies where the label should be drawn on each bar.  These values function consistently whether the bar chart is vertical or horizontal, whether the values are positive or negative, or if the bars do not use zero as their baseline.  
-If the label does not fit inside the bar when using base, middle, or end positions, the position for that label is moved outside.
+If the label does not fit inside the bar when using base, middle, or end positions, the position for that label is moved outside.  
 Acceptable values are 'base', 'middle', 'end', 'outside'  
 'base' positions the labels inside the end of the bar which is closest to the baseline.  
 'middle' positions the label at the center of bar along its length.  
