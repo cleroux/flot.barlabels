@@ -3,7 +3,7 @@ flot.barlabels
 
 [Flot](http://www.flotcharts.org) plugin that adds value labels to bar charts.
 
-![alt tag](https://cloud.githubusercontent.com/assets/1497949/5023687/3445a664-6ab2-11e4-9402-32b3ffbbe467.png)
+![alt tag](https://cloud.githubusercontent.com/assets/1497949/5026597/8fe3eb20-6ada-11e4-8a42-211e218ff996.png)
 
 ## Installation ##
 [Download](https://raw.githubusercontent.com/cleroux/flot.barlabels/master/jquery.flot.barlabels.js) and place the following script tag after flot's script tags:
@@ -19,7 +19,8 @@ series: {
 		show: boolean
 		font: string or font spec
 		labelFormatter: null or (fn: string, series object -> string)
-		position: string
+		position: string,
+		padding: number
 	}
 }
 ```
@@ -40,5 +41,8 @@ Acceptable values are 'base', 'middle', 'end', 'outer-end'
 'base' positions the labels inside the end of the bar which is closest to the baseline.  
 'middle' positions the label at the center of bar along its length.  
 'end' positions the label inside the bar at the end which is furthest from the baseline.  
-'outer-end' positions the label outside the end of the bar.  
+'outside' positions the label outside the end of the bar.  
 Default: middle
+### padding ###
+Specifies the padding used to position labels when using base, end, or outside positions.  
+Default: 4 pixels
