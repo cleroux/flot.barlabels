@@ -6,7 +6,7 @@ flot.barlabels
 ![alt tag](https://cloud.githubusercontent.com/assets/1497949/5026597/8fe3eb20-6ada-11e4-8a42-211e218ff996.png)
 
 ## Installation ##
-[Download](https://raw.githubusercontent.com/cleroux/flot.barlabels/master/jquery.flot.barlabels.js) and place the following script tag after flot's script tags:
+Download [jquery.flot.barlabels.js](https://raw.githubusercontent.com/cleroux/flot.barlabels/master/jquery.flot.barlabels.js) and place the following script tag after flot's script tags:
 ```html
 <script type="text/javascript" src="[...]/jquery.flot.barlabels.js"></script>
 ```
