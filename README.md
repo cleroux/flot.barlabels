@@ -29,7 +29,7 @@ Specifies whether or not to show value labels.
 Value: true or false  
 Default: true
 ### font ###
-Specifies the font style to use for the labels.  This option works the same as flot's font options, accepting a CSS class name or a font object.  See flot documentation for details.  
+Specifies the font style to use for the labels.  This option works the same as flot's font options, accepting a CSS class name or a font object.  See [flot documentation](https://github.com/flot/flot/blob/master/API.md#customizing-the-axes) for details.  
 Default: The default canvas font, the default CSS class applied to bar labels is 'flot-bar-label'
 ### labelFormatter ###
 A function that allows custom formatting or manipulation of the value that will be displayed on each bar.  
