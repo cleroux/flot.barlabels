@@ -48,7 +48,7 @@
 
                 for (var i = 0; i < series.data.length; i++) {
                     var text = null;
-                    var x = series.datapoints.points[i*3];
+                    var x = series.datapoints.points[i*series.datapoints.pointsize];
                     var y = series.data[i][1];
                     var b = series.data[i].length > 2 ? series.data[i][2] : 0;
                     var px = null;
