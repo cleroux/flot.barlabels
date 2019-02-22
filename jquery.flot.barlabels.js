@@ -57,7 +57,7 @@
                     var width;
                     var pos = positions[series.labels.position];
 
-                    if (plot.getOptions().bars.horizontal) {
+                    if (plot.getOptions().series.bars.horizontal) {
                         width = series.xaxis.p2c(x);
                         px = series.xaxis.p2c(x) + plot.getPlotOffset().left;
                         py = series.yaxis.p2c(y) + plot.getPlotOffset().top;
