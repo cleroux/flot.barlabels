@@ -26,10 +26,16 @@
     function init(plot, classes) {
 
         var Canvas = classes.Canvas;
+        var barLabels = null;
 
         plot.hooks.draw.push(function(plot, ctx) {
 
-            var barLabels = new Canvas("flot-bar-labels", plot.getPlaceholder());
+            var placeholder = plot.getPlaceholder();
+            if (barLabels == null) {
+                barLabels = new Canvas("flot-bar-labels", placeholder);
+                console.log("Created new canvas");
+            }
+            $(placeholder).find(".flot-bar-labels > .flot-bar-label").remove();
 
             // Move the labels layer under the overlay to preserve flot interactivity
 
