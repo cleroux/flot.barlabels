@@ -5,6 +5,9 @@ flot.barlabels
 
 ![alt tag](https://cloud.githubusercontent.com/assets/1497949/5026597/8fe3eb20-6ada-11e4-8a42-211e218ff996.png)
 
+## Compatibility ##
+This plugin is known to be compatible with Flot 0.8.3.
+
 ## Installation ##
 Download [jquery.flot.barlabels.js](https://raw.githubusercontent.com/cleroux/flot.barlabels/master/jquery.flot.barlabels.js) and place the following script tag after flot's script tags:
 ```html
@@ -20,7 +23,8 @@ series: {
 		font: string or font spec
 		labelFormatter: null or (fn: string, series object -> string)
 		position: string,
-		padding: number
+		padding: number,
+		angle: number
 	}
 }
 ```
@@ -47,3 +51,5 @@ Default: middle
 ### padding ###
 Specifies the padding used to position labels when using base, end, or outside positions.  
 Default: 4 pixels
+### angle ###
+Specifies the label rotation angle in degrees clockwise. Note this option will not work if your version of Flot does not support the angle option. You may modify jquery.flot.js as described [here](https://github.com/cleroux/flot.barlabels/issues/4) or [download the modified version from this repository's example directory](https://raw.githubusercontent.com/cleroux/flot.barlabels/master/examples/flot/jquery.flot.js) to enable this behavior.

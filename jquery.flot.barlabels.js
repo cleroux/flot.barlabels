@@ -18,7 +18,8 @@
                 font: "flot-bar-label",
                 labelFormatter: function(v) {return v;},
                 position: "middle",
-                padding: 4
+                padding: 4,
+                angle: 0
             }
         }
     };
@@ -33,7 +34,6 @@
             var placeholder = plot.getPlaceholder();
             if (barLabels == null) {
                 barLabels = new Canvas("flot-bar-labels", placeholder);
-                console.log("Created new canvas");
             }
             $(placeholder).find(".flot-bar-labels > .flot-bar-label").remove();
 
@@ -43,7 +43,6 @@
             var target = $(labelsEl.parentElement).children(".flot-overlay:first");
             $(labelsEl).insertBefore(target);
 
-            var angle = 0;
             var halign = "center";
             var valign = "middle";
             var layer = "flot-bar-labels";
@@ -69,7 +68,7 @@
                         py = series.yaxis.p2c(y) + plot.getPlotOffset().top;
                         var pb = series.xaxis.p2c(b) + plot.getPlotOffset().left;
                         text = lf ? lf(x-b, series) : x-b;
-                        var textInfo = barLabels.getTextInfo(layer, text, series.labels.font, angle, width);
+                        var textInfo = barLabels.getTextInfo(layer, text, series.labels.font, series.labels.angle, width);
                         if (Math.abs((series.xaxis.p2c(0) - width)) - series.labels.padding < textInfo.width) {
                             pos = positions.outside;
                         }
@@ -108,7 +107,7 @@
                         py = series.yaxis.p2c(y) + plot.getPlotOffset().top;
                         var pb = series.yaxis.p2c(b) + plot.getPlotOffset().top;
                         text = series.labels.labelFormatter(y - b, series);
-                        var textInfo = barLabels.getTextInfo(layer, text, series.labels.font, angle, width);
+                        var textInfo = barLabels.getTextInfo(layer, text, series.labels.font, series.labels.angle, width);
                         if (Math.abs((series.yaxis.p2c(0) - series.yaxis.p2c(y))) - series.labels.padding < textInfo.height) {
                             pos = positions.outside;
                         }
@@ -143,7 +142,7 @@
                         }
                     }
 
-                    barLabels.addText(layer, px, py, text, series.labels.font, angle, width, halign, valign);
+                    barLabels.addText(layer, px, py, text, series.labels.font, series.labels.angle, width, halign, valign);
                 }
             });
             barLabels.render();
