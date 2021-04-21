@@ -51,24 +51,24 @@
                     return;
                 }
 
-                for (var i = 0; i < series.data.length; i++) {
-                    var text = null;
-                    var x = series.datapoints.points[i*series.datapoints.pointsize];
-                    var y = series.data[i][1];
-                    var b = series.data[i].length > 2 && series.data[i][2] ? series.data[i][2] : 0;
-                    var px = null;
-                    var py = null;
-                    var lf = series.labels.labelFormatter;
-                    var width;
-                    var pos = positions[series.labels.position];
+                for (let i = 0; i < series.data.length; i++) {
+                    let text = null;
+                    let x = series.datapoints.points[i*series.datapoints.pointsize];
+                    let y = series.data[i][1];
+                    let b = series.data[i].length > 2 && series.data[i][2] ? series.data[i][2] : 0;
+                    let px = null;
+                    let py = null;
+                    let lf = series.labels.labelFormatter;
+                    let width;
+                    let pos = positions[series.labels.position];
 
                     if (plot.getOptions().series.bars.horizontal) {
                         width = series.xaxis.p2c(x);
                         px = series.xaxis.p2c(x) + plot.getPlotOffset().left;
                         py = series.yaxis.p2c(y) + plot.getPlotOffset().top;
-                        var pb = series.xaxis.p2c(b) + plot.getPlotOffset().left;
+                        let pb = series.xaxis.p2c(b) + plot.getPlotOffset().left;
                         text = lf ? lf(x-b, series) : x-b;
-                        var textInfo = barLabels.getTextInfo(layer, text, series.labels.font, series.labels.angle, width);
+                        let textInfo = barLabels.getTextInfo(layer, text, series.labels.font, series.labels.angle, width);
                         if (Math.abs((series.xaxis.p2c(0) - width)) - series.labels.padding < textInfo.width) {
                             pos = positions.outside;
                         }
@@ -105,9 +105,9 @@
                         width = series.xaxis.p2c(series.bars.barWidth);
                         px = series.xaxis.p2c(x) + plot.getPlotOffset().left;
                         py = series.yaxis.p2c(y) + plot.getPlotOffset().top;
-                        var pb = series.yaxis.p2c(b) + plot.getPlotOffset().top;
+                        let pb = series.yaxis.p2c(b) + plot.getPlotOffset().top;
                         text = series.labels.labelFormatter(y - b, series);
-                        var textInfo = barLabels.getTextInfo(layer, text, series.labels.font, series.labels.angle, width);
+                        let textInfo = barLabels.getTextInfo(layer, text, series.labels.font, series.labels.angle, width);
                         if (Math.abs((series.yaxis.p2c(0) - series.yaxis.p2c(y))) - series.labels.padding < textInfo.height) {
                             pos = positions.outside;
                         }
