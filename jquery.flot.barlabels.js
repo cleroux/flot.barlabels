@@ -55,7 +55,7 @@
                     var text = null;
                     var x = series.datapoints.points[i*series.datapoints.pointsize];
                     var y = series.data[i][1];
-                    var b = series.data[i].length > 2 ? series.data[i][2] : 0;
+                    var b = series.data[i].length > 2 && series.data[i][2] ? series.data[i][2] : 0;
                     var px = null;
                     var py = null;
                     var lf = series.labels.labelFormatter;
