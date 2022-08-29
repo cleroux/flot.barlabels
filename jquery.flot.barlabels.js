@@ -32,20 +32,22 @@
         plot.hooks.draw.push(function(plot, ctx) {
 
             var placeholder = plot.getPlaceholder();
+			let layer = "flot-bar-labels";
             if (barLabels == null) {
-                barLabels = new Canvas("flot-bar-labels", placeholder);
+                barLabels = new Canvas(layer, placeholder);
             }
-            $(placeholder).find(".flot-bar-labels > .flot-bar-label").remove();
-
-            // Move the labels layer under the overlay to preserve flot interactivity
-
+			else {
+				// Move the labels layer under the overlay to preserve flot interactivity
+				barLabels.removeText(layer);
+			}
+            
             var labelsEl = barLabels.element;
             var target = $(labelsEl.parentElement).children(".flot-overlay:first");
             $(labelsEl).insertBefore(target);
 
             var halign = "center";
             var valign = "middle";
-            var layer = "flot-bar-labels";
+           
             $.each(plot.getData(), function(ii, series) {
                 if (!series.bars.show || !series.labels.show) {
                     return;
