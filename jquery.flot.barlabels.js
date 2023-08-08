@@ -47,7 +47,8 @@
 
             var halign = "center";
             var valign = "middle";
-           
+            var stacks = {};
+
             $.each(plot.getData(), function(ii, series) {
                 if (!series.bars.show || !series.labels.show) {
                     return;
@@ -65,11 +66,26 @@
                     let pos = positions[series.labels.position];
 
                     if (plot.getOptions().series.bars.horizontal) {
+                        if (series.stack !== undefined) {
+                            if (stacks[y] === undefined) {
+                                stacks[y] = x;
+                            } else {
+                                b = stacks[y];
+                                stacks[y] += series.data[i][0];
+                            }
+                        }
                         width = series.xaxis.p2c(x);
                         px = series.xaxis.p2c(x) + plot.getPlotOffset().left;
+                        if (series.stack !== undefined && ii > 0) {
+                            px = series.xaxis.p2c(stacks[y]) + plot.getPlotOffset().left;
+                        }
                         py = series.yaxis.p2c(y) + plot.getPlotOffset().top;
                         let pb = series.xaxis.p2c(b) + plot.getPlotOffset().left;
-                        text = lf ? lf(x-b, series) : x-b;
+                        if (series.stack != undefined) {
+                            text = lf ? lf(stacks[y] - b, series) : stacks[y] - b;
+                        } else {
+                            text = lf ? lf(x-b, series) : x-b;
+                        }
                         let textInfo = barLabels.getTextInfo(layer, text, series.labels.font, series.labels.angle, width);
                         if (Math.abs((series.xaxis.p2c(0) - width)) - series.labels.padding < textInfo.width) {
                             pos = positions.outside;
@@ -104,11 +120,26 @@
                             px = pb + ((px - pb) / 2);
                         }
                     } else {
+                        if (series.stack !== undefined) {
+                            if (stacks[x] === undefined) {
+                                stacks[x] = y;
+                            } else {
+                                b = stacks[x];
+                                stacks[x] += y;
+                            }
+                        }
                         width = series.xaxis.p2c(series.bars.barWidth);
                         px = series.xaxis.p2c(x) + plot.getPlotOffset().left;
                         py = series.yaxis.p2c(y) + plot.getPlotOffset().top;
+                        if (series.stack !== undefined && ii > 0) {
+	                        py = series.yaxis.p2c(stacks[x]) + plot.getPlotOffset().top;
+                        }
                         let pb = series.yaxis.p2c(b) + plot.getPlotOffset().top;
-                        text = series.labels.labelFormatter(y - b, series);
+                        if (series.stack !== undefined) {
+                            text = lf ? lf(stacks[x] - b, series) : stacks[x] - b;
+                        } else {
+                            text = lf ? lf(y - b, series) : y - b;
+                        }
                         let textInfo = barLabels.getTextInfo(layer, text, series.labels.font, series.labels.angle, width);
                         if (Math.abs((series.yaxis.p2c(0) - series.yaxis.p2c(y))) - series.labels.padding < textInfo.height) {
                             pos = positions.outside;

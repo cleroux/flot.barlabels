@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<style type="text/css">
+			#placeholder {
+				height:300px;
+				width:400px;
+			}
+		</style>
+		<script type="text/javascript" src="flot/jquery.js"></script>
+		<script type="text/javascript" src="flot/jquery.flot.js"></script>
+		<script type="text/javascript" src="../jquery.flot.barlabels.js"></script>
+		<script type="text/javascript">
+		
+			var data = [
+				{
+				  label: "middle",
+				  data: [[3,1],[2,2],[1,3]],
+					labels: {
+						position: "middle"
+					}
+				},
+				{
+				  label: "base",
+				  data: [[6,4],[5,5],[4,6]],
+					labels: {
+						position: "base"
+					}
+				},
+				{
+				  label: "end",
+				  data: [[3,7],[2,8],[1,9]],
+					labels: {
+						position: "end"
+					}
+				},
+				{
+				  label: "outside",
+				  data: [[4,10],[3,11],[2,12]],
+					labels: {
+						position: "outside"
+					}
+				}
+			];
+
+			var options = {
+				lines: {
+					show: false
+				},
+				bars: {
+					show: true,
+					align: "center",
+					horizontal: true,
+					barWidth: 0.9
+				}
+			};
+			
+			$(function() {
+				$.plot("#placeholder", data, options);
+			});
+		</script>
+	</head>
+	<body>
+		<div id="page-title">Flot Bar Labels Plugin Horizontal Label Positions Example</div>
+		<div id="placeholder"></div>
+	</body>
+</html>
