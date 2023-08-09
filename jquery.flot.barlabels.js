@@ -19,7 +19,8 @@
                 labelFormatter: function(v) {return v;},
                 position: "middle",
                 padding: 4,
-                angle: 0
+                angle: 0,
+                nudgeOversize: true
             }
         }
     };
@@ -87,7 +88,7 @@
                             text = lf ? lf(x-b, series) : x-b;
                         }
                         let textInfo = barLabels.getTextInfo(layer, text, series.labels.font, series.labels.angle, width);
-                        if (Math.abs((series.xaxis.p2c(0) - width)) - series.labels.padding < textInfo.width) {
+                        if (series.labels.nudgeOversize && Math.abs((series.xaxis.p2c(0) - width)) - series.labels.padding < textInfo.width) {
                             pos = positions.outside;
                         }
 
@@ -141,7 +142,7 @@
                             text = lf ? lf(y - b, series) : y - b;
                         }
                         let textInfo = barLabels.getTextInfo(layer, text, series.labels.font, series.labels.angle, width);
-                        if (Math.abs((series.yaxis.p2c(0) - series.yaxis.p2c(y))) - series.labels.padding < textInfo.height) {
+                        if (series.labels.nudgeOversize && Math.abs((series.yaxis.p2c(0) - series.yaxis.p2c(y))) - series.labels.padding < textInfo.height) {
                             pos = positions.outside;
                         }
 
