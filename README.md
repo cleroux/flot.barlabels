@@ -55,7 +55,7 @@ Default: 4 pixels
 Specifies the label rotation angle in degrees clockwise. Note this option will not work if your version of Flot does not support the angle option. You may modify jquery.flot.js as described [here](https://github.com/cleroux/flot.barlabels/issues/4) or [download the modified version from this repository's example directory](https://raw.githubusercontent.com/cleroux/flot.barlabels/master/examples/flot/jquery.flot.js) to enable this behavior.  
 Default: 0 deg
 ### nudgeOversize ###
-Specifies whether or not to nudge oversize value labels to the `outside` position.
-Value: true or false
-Default: true
+Specifies whether or not to nudge oversize value labels to the `outside` position.  
+Value: true or false  
+Default: true  
 
